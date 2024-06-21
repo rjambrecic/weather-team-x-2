@@ -1,0 +1,22 @@
+# fly.toml app configuration file generated for weather-team-x-2-1718953606-server on 2024-06-21T07:07:23Z
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'weather-team-x-2-1718953606-server'
+primary_region = 'mia'
+
+[build]
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 1
+  processes = ['app']
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
